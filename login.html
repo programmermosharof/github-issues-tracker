@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Tailwind CSS for Utility Class -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+        <!-- Font Awesome > For icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Css File Connect -->
+    <link rel="stylesheet" href="Style/index.css">
+    <!-- Google Font : Geist  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <title>Login Page</title>
+</head>
+<body>
+
+    <!-- Login Page  -->
+<main class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+  
+  <section class="card w-full max-w-[420px] bg-white shadow-xl rounded-lg p-10 border border-gray-100">
+    
+    <div class="flex flex-col items-center text-center mb-8">
+      <img src="assets/github-logo.png" alt="Github Logo" class="w-16 mb-4">
+      <h2 class="text-2xl font-bold text-gray-800">GitHub Issues Tracker</h2>
+      <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
+    </div>
+
+    <div id="login-form" class="space-y-4">
+      
+      <form class="form-control">
+        <label class="label font-semibold text-gray-700">Username</label>
+        <input type="text" id="username" placeholder="Enter Username" class="input input-bordered w-full focus:outline-none focus:border-purple-500"  />
+        <p class="text-[14px] text-purple-600 mt-1">Default: admin</p>
+      </div>
+
+      <div class="form-control">
+        <label class="label font-semibold text-gray-700">Password</label>
+        <input type="password" id="password" placeholder="Enter Password" class="input input-bordered w-full focus:outline-none focus:border-purple-500"  />
+        <p class="text-[14px] text-purple-600 mt-1">Default: admin123</p>
+      </div>
+
+      <button class="btn bg-[#570DF8] hover:bg-[#4506cb] text-white w-full border-none mt-2" id="SignIn-btn">Sign In</button>
+    </form>
+
+    <div class="divider text-xs my-8 uppercase">OR</div>
+
+    <div class="text-center">
+      <p class="text-xs text-gray-500 mb-3 ">Demo Credentials:</p>
+      <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+        <p class="text-sm font-medium text-gray-700">Username: <span class="font-bold">admin</span></p>
+        <p class="text-sm font-medium text-gray-700">Password: <span class="font-bold">admin123</span></p>
+      </div>
+    </div>
+
+  </section>
+</main>
+ 
+    <!-- JavaScript -->
+     <script src="JavaScript/login.js"></script>
+</body>
+</html>
