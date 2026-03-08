@@ -18,101 +18,52 @@
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     
-    <title>github-issues-tracker</title>
+    <title>Login Page</title>
 </head>
 <body>
-<header>
+
+    <!-- Login Page  -->
+<main class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
   
-<!-- navbar Section -->
- <nav class="navbar  bg-base-100 shadow-sm px-4 md:px-12 flex justify-between items-center py-4">
-  
-  <div class="flex  items-center gap-3">
-    <img src="assets/github-logo.png" alt="Logo" class="w-8">
-    <h1 class="text-xl font-bold text-gray-800">GitHub Issues Tracker</h1>
-  </div>
-
-  <div class="flex items-center gap-2">
-    <div class="relative">
-       <input id="search-input" type="text" placeholder=" 🔍︎ Search issues..." class="input input-bordered w-full max-w-xs pl-10" />
-       </div>
-    <button id="search-btn" class="btn bg-[#570DF8] hover:bg-[#4506cb] text-white border-none">
-       <i class="fa-solid fa-plus"></i> New Issue
-    </button>
-  </div>
-
-</nav>
-</header>
-<main class="bg-[#F3F4F6] min-h-screen py-8 px-4 md:px-12 space-y-2">
-  <!-- Button Section -->
-<section class="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-    <div class="flex items-center gap-3">
-      <button onclick="filterByStatus('all', event)" id="all-btn" class="btn filter-btn bg-[#570DF8] text-white hover:bg-[#4506cb] border-none rounded-lg px-6">All</button>
-      <button onclick="filterByStatus('open', event)" id="open-btn" class=" filter-btn btn btn-ghost border border-gray-200 rounded-lg px-6">Open</button>
-      <button onclick="filterByStatus('closed', event)" id="closed-btn" class="btn filter-btn btn-ghost border border-gray-200 rounded-lg px-6">Closed</button>
-    </div>
-</section>
-<!-- Issues Counter section -->
-<section class="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-    <div class="flex justify-between items-center">
-      <div class="flex items-center gap-4">
-        <div class="p-3 bg-purple-50 rounded-xl">
-           <img src="assets/Aperture.png" alt="icon" class="w-6 h-6">
-        </div>
-        <div>
-          <h3 class="font-bold text-2xl text-gray-800"><span id="issue-count">0</span> Issues</h3>
-          <p class="text-sm text-gray-500">Track and manage your project issues</p>
-        </div>
-      </div>
-
-      <div class="flex gap-4 text-sm font-semibold">
-        <span class="flex items-center gap-2">
-          <span class="w-3 h-3 bg-[#22C55E] rounded-full"></span> Open
-        </span>
-        <span class="flex items-center gap-2">
-          <span class="w-3 h-3 bg-[#8B5CF6] rounded-full"></span> Closed
-        </span>
-      </div>
-    </div>
-</section>
-<!-- Issues card Section -->
-<section class="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-   <div id="loading-spinner" class="col-span-full flex flex-col items-center py-20 text-gray-400"> 
-          <span class="loading loading-dots loading-xl"></span>  
-    </div> 
-
-    <div id="issue-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- issues card -->
-
-    <!-- loading-spinner  -->
-     
-    </div>
-</section>
-
-
-</main>
-<!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-<dialog id="my_modal_1" class="modal">
-  <div class="modal-box max-w-2xl p-8">
-
-   
-    <div id="modal-content">
-    </div>
-
-    <div class="modal-action">
-      <form method="dialog">
-        <button class="btn btn-primary">Close</button>
-      </form>
-    </div>
-
-  </div>
-</dialog>
-
-
-
+  <section class="card w-full max-w-[420px] bg-white shadow-xl rounded-lg p-10 border border-gray-100">
     
+    <div class="flex flex-col items-center text-center mb-8">
+      <img src="assets/github-logo.png" alt="Github Logo" class="w-16 mb-4">
+      <h2 class="text-2xl font-bold text-gray-800">GitHub Issues Tracker</h2>
+      <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
+    </div>
+
+    <div id="login-form" class="space-y-4">
+      
+      <form class="form-control">
+        <label class="label font-semibold text-gray-700">Username</label>
+        <input type="text" id="username" placeholder="Enter Username" class="input input-bordered w-full focus:outline-none focus:border-purple-500"  />
+        <p class="text-[14px] text-purple-600 mt-1">Default: admin</p>
+      </div>
+
+      <div class="form-control">
+        <label class="label font-semibold text-gray-700">Password</label>
+        <input type="password" id="password" placeholder="Enter Password" class="input input-bordered w-full focus:outline-none focus:border-purple-500"  />
+        <p class="text-[14px] text-purple-600 mt-1">Default: admin123</p>
+      </div>
+
+      <button class="btn bg-[#570DF8] hover:bg-[#4506cb] text-white w-full border-none mt-2" id="SignIn-btn">Sign In</button>
+    </form>
+
+    <div class="divider text-xs my-8 uppercase">OR</div>
+
+    <div class="text-center">
+      <p class="text-xs text-gray-500 mb-3 ">Demo Credentials:</p>
+      <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+        <p class="text-sm font-medium text-gray-700">Username: <span class="font-bold">admin</span></p>
+        <p class="text-sm font-medium text-gray-700">Password: <span class="font-bold">admin123</span></p>
+      </div>
+    </div>
+
+  </section>
+</main>
+ 
     <!-- JavaScript -->
- <!-- <script src="test.js"></script> -->
-<script src="JavaScript/index.js"></script>
+     <script src="JavaScript/login.js"></script>
 </body>
 </html>

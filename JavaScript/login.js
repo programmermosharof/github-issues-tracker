@@ -10,7 +10,7 @@ loginForm.addEventListener("submit", (event) => {
 
     if(username === "admin" && password === "admin123"){
         alert("Login successful");
-        window.location.href = "../index.html";
+        window.location.href = "dashboard.html";
     }else{
         alert("Username or Password wrong");
     }

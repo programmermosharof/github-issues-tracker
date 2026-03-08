@@ -173,7 +173,7 @@ modalContainer.innerHTML = `
 // =====  Search Issue ========
 searchInput.addEventListener('input', async (event) => {
  const searchText = event.target.value;
- if(searchText === " "){
+ if(searchText === ""){
 
     displayIssues(allDataArray);
     return;
