@@ -44,6 +44,7 @@ if (issueCountElement) {
         issueContainer.innerHTML = `<div class="col-span-full text-center py-10"><h1 class="text-2xl font-bold text-gray-400">No Issues Found!</h1></div>`;
         return;
     }
+    issueContainer.innerHTML = '';
 
  issues.forEach(allIssues => {
 
@@ -169,7 +170,20 @@ modalContainer.innerHTML = `
 // modalContainer.appendChild(modalDiv)
 
 }
+// =====  Search Issue ========
+searchInput.addEventListener('input', async (event) => {
+ const searchText = event.target.value;
+ if(searchText === " "){
 
+    displayIssues(allDataArray);
+    return;
+ }
+
+ const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+ const data = await res.json();
+ displayIssues(data.data)
+
+});
 
 
 loadAllIssues()
