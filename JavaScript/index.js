@@ -171,19 +171,18 @@ modalContainer.innerHTML = `
 
 }
 // =====  Search Issue ========
-searchInput.addEventListener('input', async (event) => {
- const searchText = event.target.value;
- if(searchText === ""){
 
+document.getElementById('search-btn').addEventListener('click', async () => {
+  const searchText = searchInput.value.trim();
+
+  if (searchText === "") {
     displayIssues(allDataArray);
     return;
- }
+  }
 
- const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
- const data = await res.json();
- displayIssues(data.data)
-
+  const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+  const data = await res.json();
+  displayIssues(data.data);
 });
-
 
 loadAllIssues()
