@@ -34,7 +34,7 @@ const loadAllIssues = async () => {
 };
 // Display Function (Dynamic Card Rendering)
 const displayIssues =  (issues) => {
-// issueContainer.innerHTML = "";
+
 
 if (issueCountElement) {
         issueCountElement.innerText = `${issues.length} `;
@@ -50,20 +50,20 @@ if (issueCountElement) {
 
   const allDiv = document.createElement('div');
   allDiv.className = "h-full cursor-pointer";
-//   
+ 
   const isOpen = allIssues.status === 'open';
   const borderColorClass = isOpen ? 'border-t-green-500' :
   'border-t-purple-500' 
   const statusIcon = isOpen ? 'assets/Open-Status.png' : 'assets/Closed-Status.png';
    const priorityColor = allIssues.priority === 'high' ? 'bg-red-100 text-red-600' : 'bg-orange-100 text-orange-600';
 allDiv.innerHTML = `
-            <div  class="card h-full flex flex-col bg-white border border-gray-100 shadow-sm rounded-xl p-5 border-t-4 ${borderColorClass} hover:shadow-lg transition-all">
+            <div onclick="showIssueDetails('${allIssues.id}')"   class="card h-full flex flex-col bg-white border border-gray-100 shadow-sm rounded-xl p-5 border-t-4 ${borderColorClass} hover:shadow-lg transition-all">
                 <div class="flex justify-between items-center mb-3">
                     <img src="${statusIcon}" alt="status" class="w-5 h-5">
                     <div class="badge ${priorityColor} text-[12px] font-bold px-3 py-2 uppercase border-none">${allIssues.priority}</div>
                 </div>
                 <div class="space-y-2 mb-4 flex-grow text-left">
-                    <h2 onclick="showIssueDetails('${allIssues.id}')" class="font-bold text-gray-800 text-sm leading-tight line-clamp-1 hover:text-purple-600 cursor-pointer">
+                    <h2 class="font-bold text-gray-800 text-sm leading-tight line-clamp-1 hover:text-purple-600 cursor-pointer">
                         ${allIssues.title}
                     </h2>
                     <p class="text-xs text-gray-500 line-clamp-2">${allIssues.description}</p>
